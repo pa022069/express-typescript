@@ -15,7 +15,9 @@ router.route("/").get(schema, async (req: any, res: any) => {
 
 router.route("/").post(schema, async (req: any, res: any) => {
   const errors = validationResult(req);
-  if (!errors.isEmpty()) res.status(400).json({ errors: errors.array() });
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
 
   try {
     res.status(200).json(req.body);
