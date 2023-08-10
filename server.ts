@@ -2,9 +2,11 @@ import bodyparser from "body-parser";
 import express from "express";
 import cors from "cors";
 import server from "./routes/server";
+import helmet from "helmet";
 
 const app = express();
 
+app.use(helmet());
 app.use(
   cors({
     origin: "*",
