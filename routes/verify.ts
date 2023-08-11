@@ -1,7 +1,6 @@
 import express from "express";
 import verify from "../helpers/verify";
 import dotenv from "dotenv";
-import exp from "constants";
 dotenv.config();
 
 const router = express.Router();
